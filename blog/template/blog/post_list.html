@@ -1,7 +1,24 @@
 <html>
+<head>
+<title>My Blog</title>
+</head>
+<body>
+	<div>
+		<h1>
+			<a href="">My Django Blog</a>
+		</h1>
+	</div>
 
-	    <p>Hi there!</p>
-
-	        <p>It works!</p>
-
-	</html>
+	<div>
+		{% for post in posts %}
+		<p>Published date: {{ post.published_date }} By: {{ post.author }}</p>
+		<p>
+		<h1>
+			<a href="">{{ post.title }}</a>
+		</h1>
+		</p>
+		<p>{{ post.text|linebreaks}}</p>
+		{% endfor %}
+	</div>
+</body>
+</html>
